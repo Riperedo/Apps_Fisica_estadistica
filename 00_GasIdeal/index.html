@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulación de Gas Ideal 2D</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Simulación de Gas Ideal en 2D</h1>
+
+    <div class="container">
+        <div class="simulation-container">
+            <canvas id="simulationCanvas"></canvas>
+        </div>
+        <div class="controls-column">
+            <div class="controls-container">
+                <h2>Controles</h2>
+                <div class="control">
+                    <label for="particleCount">Número de Partículas:</label>
+                    <input type="range" id="particleCount" min="10" max="500" value="100">
+                    <span id="particleCountValue">100</span>
+                </div>
+                <div class="control">
+                    <label for="temperature">Temperatura (Velocidad):</label>
+                    <input type="range" id="temperature" min="1" max="10" value="5">
+                    <span id="temperatureValue">5</span>
+                </div>
+                <div class="control">
+                    <label for="pistonPosition">Posición del Pistón (Volumen):</label>
+                    <input type="range" id="pistonPosition" min="150" max="550" value="550">
+                    <span id="pistonPositionValue">550</span>
+                </div>
+                <button id="restartButton">Reiniciar Simulación</button>
+            </div>
+            <!-- NUEVO CONTENEDOR DE ESTADÍSTICAS -->
+            <div class="stats-container">
+                <h2>Estadísticas de Presión</h2>
+                <div class="stat">
+                    <span>Valor Medio (μ):</span>
+                    <span id="meanValue">N/A</span>
+                </div>
+                <div class="stat">
+                    <span>Varianza (σ²):</span>
+                    <span id="varianceValue">N/A</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="chart-container">
+        <h2>Presión sobre el Pistón a lo largo del Tiempo</h2>
+        <canvas id="pressureChart"></canvas>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

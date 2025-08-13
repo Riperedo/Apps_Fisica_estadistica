@@ -1,0 +1,83 @@
+body {
+    font-family: sans-serif;
+    margin: 20px;
+    background-color: #f0f0f0;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-top: 20px;
+    gap: 30px; /* Espacio entre la simulación y la columna de controles */
+}
+
+.simulation-container {
+    border: 2px solid #333;
+}
+
+.controls-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre los controles y las estadísticas */
+    width: 300px;
+}
+
+.controls-container, .stats-container {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.control, .stat {
+    margin-bottom: 15px;
+}
+
+.stat {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+}
+
+.stat span:last-child {
+    font-weight: bold;
+    color: #0056b3;
+}
+
+.control label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.control input[type="range"] {
+    width: 100%;
+}
+
+#restartButton {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#restartButton:hover {
+    background-color: #0056b3;
+}
+
+.chart-container {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
