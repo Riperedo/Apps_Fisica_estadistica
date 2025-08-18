@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ergodicidad: Comparación de Lanzamientos de Dados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Comparando Distribuciones: Tiempo vs. Ensamble</h1>
+        <p>Observa cómo la <strong>distribución de probabilidad</strong> de N lanzamientos de una persona (Promedio Temporal) converge a la misma distribución que un solo lanzamiento de N personas (Promedio de Ensamble).</p>
+    </header>
+
+    <main>
+        <section class="simulation-container">
+            <div class="controls">
+                <label for="num-realizations">Número de Realizaciones (N):</label>
+                <input type="number" id="num-realizations" value="1000" min="1" max="100000">
+                <button id="start-time-average">Iniciar Promedio Temporal</button>
+                <button id="start-ensemble-average">Iniciar Promedio de Ensamble</button>
+            </div>
+            
+            <div id="dice-container" class="dice-container">
+                <div class="dice" id="dice-1"></div>
+                <div class="dice" id="dice-2"></div>
+            </div>
+            
+            <canvas id="comparison-histogram" width="600" height="300"></canvas>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
