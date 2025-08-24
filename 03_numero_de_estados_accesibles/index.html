@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partícula en una Caja Cúbica 3D</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="container">
+        <div id="viewer">
+            <canvas id="quantum-canvas"></canvas>
+        </div>
+        <div id="controls">
+            <h1>Partícula en una Caja Cúbica</h1>
+            <p class="info">
+                <strong>Usa el ratón:</strong> Clic izquierdo para rotar, rueda para zoom, clic derecho para mover.
+            </p>
+
+            <div class="control-group">
+                <label for="energy-slider">Energía del Sistema (E)</label>
+                <input type="range" id="energy-slider" min="1" max="1000" value="250">
+                <span id="energy-value">250</span>
+            </div>
+
+            <div class="control-group">
+                <label for="energy-shell-slider">Intervalo de Energía (dE)</label>
+                <input type="range" id="energy-shell-slider" min="10" max="200" value="50" step="1">
+                <span id="energy-shell-value">50</span>
+            </div>
+
+            <div class="control-group">
+                <label for="length-slider">Arista de la Caja (L)</label>
+                <input type="range" id="length-slider" min="1" max="20" value="10">
+                <span id="length-value">10</span>
+            </div>
+
+            <div id="formulas">
+                <h2>Fórmulas Fundamentales</h2>
+                <p><strong>Niveles de Energía:</strong>
+                   <span>$$ E = \frac{\hbar^2 \pi^2}{2mL^2} (n_x^2 + n_y^2 + n_z^2) $$</span>
+                </p>
+                <p><strong>Número de Estados (Analítico):</strong>
+                   <span>$$ \Omega(E, dE) \approx g(E)dE = \frac{(2m)^{3/2} L^3}{4\hbar^3\pi^2} \sqrt{E} dE $$</span>
+                </p>
+            </div>
+
+            <div id="results">
+                <h2>Resultados</h2>
+                <p>Estados Contados (Ω): <span id="accessible-states">0</span></p>
+                <p>Predicción Analítica (Ω_a): <span id="analytical-states">0</span></p>
+                <p class="difference">Diferencia: <span id="difference-percentage">0%</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
