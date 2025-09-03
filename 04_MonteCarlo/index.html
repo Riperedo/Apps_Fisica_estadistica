@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulación de Espines No Interactuantes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Simulación de Espines No Interactuantes</h1>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="nx">Número de espines en x (nx):</label>
+                <input type="number" id="nx" value="10" min="1">
+            </div>
+            <div class="control-group">
+                <label for="ny">Número de espines en y (ny):</label>
+                <input type="number" id="ny" value="10" min="1">
+            </div>
+            <div class="control-group">
+                <label for="magneticField">Campo Magnético (B):</label>
+                <input type="number" id="magneticField" value="1" step="0.1">
+            </div>
+            <div class="control-group">
+                <label for="kbt">Energía Térmica (kBT):</label>
+                <input type="number" id="kbt" value="0.5" step="0.1">
+            </div>
+            <button id="startButton">Iniciar Simulación</button>
+            <button id="stopButton" disabled>Detener Simulación</button>
+            <button id="resetButton">Reiniciar Simulación</button>
+        </div>
+
+        <div class="simulation-area">
+            <div class="spin-grid" id="spinGrid"></div>
+            <div class="data-display">
+                <h2>Resultados</h2>
+                <p>Magnetización Teórica: <span id="theoreticalMagnetization"></span></p>
+                <canvas id="magnetizationChart"></canvas>
+                <!-- NUEVO GRÁFICO AQUÍ -->
+                <h3>Magnetización vs B/kBT</h3>
+                <canvas id="magnetizationVsBkBTChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
